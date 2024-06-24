@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		// $nooutabsent = $this->reportatt->get_data_attparam('NoOutAbsent');
 		// // get data LEAVECLASS1
 		// $leaveclass = $this->reportatt->get_data_leaveclass();
-        $this->load->view('report');
+        $this->load->view('tree');
     }
 
 	private function get_date_range($start_date, $end_date) {
@@ -301,6 +301,12 @@ class Welcome extends CI_Controller {
 						$found_sch = $this->reportatt->get_schclass_byid($schclass_used[$keyused]->SCHCLASSID);
 						
 						if ($found_sch) {
+							/*  
+								* NOTES
+								* Jika karyawan masuk kerja shift malam dan pada esok harinya dia langsung masuk shift pagi maka
+								* jarak antara jam checkout pada shift malam dan jam checkin pada shift pagi harus >= 2 jam karena untuk sekarang
+								* jam kerja shift tidak boleh tumpang tindih (ini masih perlu diskusi dengan pak iwan apakan range >= 2 jam itu sudah sesuai atau tidak)
+							*/
 							$checkintime1 = $is_changes_day ? (new DateTime($found_sch->CHECKINTIME1))->modify('+2 hours')->format('H:i:s') : (new DateTime($found_sch->CHECKINTIME1))->format('H:i:s');
 							$checkintime2 = (new DateTime($found_sch->CHECKINTIME2))->format('H:i:s');
 							$checkouttime1 = (new DateTime($found_sch->CHECKOUTTIME1))->format('H:i:s');
