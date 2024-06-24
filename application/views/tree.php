@@ -107,6 +107,56 @@
                             },
                         ]
                     },
+                    {
+                        "id": "idB",
+                        "name": "LEADER <br> Iwan Sasmiko",
+                        "options": {
+                            "nodeBGColor": '#84a59d',
+                        },
+                        "children": [
+                            {
+                                "id": "idC",
+                                "name": "Moh Sodik Fikri",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Fais Albaya",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Alfin Fatoni",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Pasya Ibrahim",
+                            },
+                        ]
+                    },
+                    {
+                        "id": "idB",
+                        "name": "LEADER <br> Iwan Sasmiko",
+                        "options": {
+                            "nodeBGColor": '#84a59d',
+                        },
+                        "children": [
+                            {
+                                "id": "idC",
+                                "name": "Moh Sodik Fikri",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Fais Albaya",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Alfin Fatoni",
+                            },
+                            {
+                                "id": "idD",
+                                "name": "Pasya Ibrahim",
+                            },
+                        ]
+                    },
                 ]
             };
 

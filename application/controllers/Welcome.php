@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		// $nooutabsent = $this->reportatt->get_data_attparam('NoOutAbsent');
 		// // get data LEAVECLASS1
 		// $leaveclass = $this->reportatt->get_data_leaveclass();
-        $this->load->view('tree');
+        $this->load->view('fullcalendar');
     }
 
 	private function get_date_range($start_date, $end_date) {
@@ -462,6 +462,40 @@ class Welcome extends CI_Controller {
 		$intervalFormatted = sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds);
 
 		return $intervalFormatted;
+	}
+
+	public function dayoffapi() {
+		// Curl Init
+		$curl = curl_init();
+
+		curl_setopt_array($curl, array(
+			CURLOPT_URL => 'https://dayoffapi.vercel.app/api?year=2017',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'GET',
+			CURLOPT_HTTPHEADER => array(
+				'Content-Type: application/x-www-form-urlencoded'
+			),
+		));
+
+		$response = curl_exec($curl);
+
+		curl_close($curl);
+
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode([
+				'meta' => [
+					'code' => 200,
+					'message' => 'Success'
+				],
+				'data' => json_decode($response)
+			]));
+		return;
 	}
 
 }
