@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		// $nooutabsent = $this->reportatt->get_data_attparam('NoOutAbsent');
 		// // get data LEAVECLASS1
 		// $leaveclass = $this->reportatt->get_data_leaveclass();
-        $this->load->view('fullcalendar');
+        $this->load->view('report');
     }
 
 	private function get_date_range($start_date, $end_date) {
@@ -469,7 +469,7 @@ class Welcome extends CI_Controller {
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'https://dayoffapi.vercel.app/api?year=2017',
+			CURLOPT_URL => 'https://dayoffapi.vercel.app/api?year='.$this->input->get('year'),
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_ENCODING => '',
 			CURLOPT_MAXREDIRS => 10,
@@ -485,6 +485,15 @@ class Welcome extends CI_Controller {
 		$response = curl_exec($curl);
 
 		curl_close($curl);
+
+		// array_push($response, [
+		// 	"tanggal" => "2017-01-1",
+		// 	"keterangan" => "Tahun Baru 2017 Masehi",
+		// 	"is_cuti" => false
+		// ]);
+
+		// print_r(json_decode($response));
+		// return;
 
 		$this->output
 			->set_content_type('application/json')
