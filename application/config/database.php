@@ -74,12 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> 'Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=D:/db/att2000_new/att2000.mdb;Uid=;Pwd=;',
-	'hostname' => '',
-	'username' => '',
+	// 'dsn'	=> 'Driver={Microsoft Access Driver (*.mdb, *.accdb)};Dbq=D:/db/att2000_new/att2000.mdb;Uid=;Pwd=;',
+	'hostname' => 'localhost',
+	'username' => 'root',
 	'password' => '',
-	'database' => '',
-	'dbdriver' => 'odbc',
+	'database' => 'db_inact',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

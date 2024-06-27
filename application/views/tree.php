@@ -110,20 +110,38 @@
                 ]
             };
 
-            const options = {
-                width: 1100,
-                height: 700,
-                nodeWidth: 120,
-                nodeHeight: 80,
-                childrenSpacing: 100,
-                siblingSpacing: 30,
-                direction: 'top',
-                canvasStyle: 'border: 1px solid black; background: #fff;',
-                enableToolbar: true,
-            };
+            // const options = {
+            //     width: 1100,
+            //     height: 700,
+            //     nodeWidth: 120,
+            //     nodeHeight: 80,
+            //     childrenSpacing: 100,
+            //     siblingSpacing: 30,
+            //     direction: 'top',
+            //     canvasStyle: 'border: 1px solid black; background: #fff;',
+            //     enableToolbar: true,
+            // };
 
-            const tree = new ApexTree(document.getElementById('svg-tree'), options);
-            const graph = tree.render(data);
+            $.ajax({
+                url: 'http://localhost/simple-attendance/welcome/departements',
+                method: 'GET'
+            }).then((res) => {
+                const options = {
+                    width: 1100,
+                    height: 700,
+                    nodeWidth: 120,
+                    nodeHeight: 80,
+                    childrenSpacing: 100,
+                    siblingSpacing: 30,
+                    direction: 'top',
+                    canvasStyle: 'background: #F2FAFD;',
+                    enableToolbar: true,
+                };
+                console.log('response: ', res);
+                const tree = new ApexTree(document.getElementById('svg-tree'), options);
+                const graph = tree.render(res.data[0]);
+            })
+
         })
     </script>
 

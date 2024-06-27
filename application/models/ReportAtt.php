@@ -3,11 +3,11 @@
 class ReportAtt extends CI_Model
 {
 
-    public function __construct() {
-        parent::__construct();
-        // $this->access_db = $this->load->database('default', TRUE);
-        $this->load->database();
-    }
+    // public function __construct() {
+    //     parent::__construct();
+    //     // $this->access_db = $this->load->database('default', TRUE);
+    //     $this->load->database();
+    // }
 
     public function get_data_attparam($params)
     {
@@ -124,6 +124,20 @@ class ReportAtt extends CI_Model
         );
 
         return $query->result();
+    }
+
+    public function get_departement($column = null, $value = null) {
+
+        $this->db->select('id, name, parent');
+        $this->db->from('tbdepartements');
+        // $this->db->where('parent <>', 0);
+        
+        if ($column) {
+            $this->db->where($column, $value);
+        }
+
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
 }

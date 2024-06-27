@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
 		// $nooutabsent = $this->reportatt->get_data_attparam('NoOutAbsent');
 		// // get data LEAVECLASS1
 		// $leaveclass = $this->reportatt->get_data_leaveclass();
-        $this->load->view('report');
+        $this->load->view('tree');
     }
 
 	private function get_date_range($start_date, $end_date) {
@@ -66,6 +66,46 @@ class Welcome extends CI_Controller {
 					'message' => 'Success'
 				],
 				'data' => $data
+			]));
+		return;
+	}
+
+	private function get_sub_child_dept($params) {
+		$dept = $this->reportatt->get_departement('child', $params);
+		return $dept;
+	}
+
+	private function buildHierarchy($data, $parentId = '0') {
+		$result = [];
+
+		foreach ($data as $key => $item) {
+			// return $item['parent'];
+			if ($item['parent'] === $parentId) {
+				$children = $this->buildHierarchy($data, $item['id']);
+				if (!empty($children)) {
+					$item['children'] = $children;
+				}
+				unset($item['parent']); // Menghapus 'parent' dari hasil akhir
+				$result[] = $item;
+			}
+		}
+
+		return $result;
+	}
+
+	public function departements() {
+
+		$dept = $this->reportatt->get_departement();
+
+		$hierarchy = $this->buildHierarchy($dept);
+		$this->output
+			->set_content_type('application/json')
+			->set_output(json_encode([
+				'meta' => [
+					'code' => 200,
+					'message' => 'Success'
+				],
+				'data' => $hierarchy
 			]));
 		return;
 	}
