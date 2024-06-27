@@ -25,90 +25,90 @@
 
     <script>
         $(document).ready(function() {
-            const data = {
-                "id": "idA",
-                "name": "RnD <br> Programmer",
-                "options": {
-                    "nodeBGColor": '#00afb9',
-                },
-                "children": [
-                    {
-                        "id": "idB",
-                        "name": "LEADER <br> Iwan Sasmiko",
-                        "options": {
-                            "nodeBGColor": '#84a59d',
-                        },
-                        "children": [
-                            {
-                                "id": "idC",
-                                "name": "Moh Sodik Fikri",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Fais Albaya",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Alfin Fatoni",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Pasya Ibrahim",
-                            },
-                        ]
-                    },
-                    {
-                        "id": "idB",
-                        "name": "LEADER <br> Iwan Sasmiko",
-                        "options": {
-                            "nodeBGColor": '#84a59d',
-                        },
-                        "children": [
-                            {
-                                "id": "idC",
-                                "name": "Moh Sodik Fikri",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Fais Albaya",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Alfin Fatoni",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Pasya Ibrahim",
-                            },
-                        ]
-                    },
-                    {
-                        "id": "idB",
-                        "name": "LEADER <br> Iwan Sasmiko",
-                        "options": {
-                            "nodeBGColor": '#84a59d',
-                        },
-                        "children": [
-                            {
-                                "id": "idC",
-                                "name": "Moh Sodik Fikri",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Fais Albaya",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Alfin Fatoni",
-                            },
-                            {
-                                "id": "idD",
-                                "name": "Pasya Ibrahim",
-                            },
-                        ]
-                    },
-                ]
-            };
+            // const data = {
+            //     "id": "idA",
+            //     "name": "RnD <br> Programmer",
+            //     "options": {
+            //         "nodeBGColor": '#00afb9',
+            //     },
+            //     "children": [
+            //         {
+            //             "id": "idB",
+            //             "name": "LEADER <br> Iwan Sasmiko",
+            //             "options": {
+            //                 "nodeBGColor": '#84a59d',
+            //             },
+            //             "children": [
+            //                 {
+            //                     "id": "idC",
+            //                     "name": "Moh Sodik Fikri",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Fais Albaya",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Alfin Fatoni",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Pasya Ibrahim",
+            //                 },
+            //             ]
+            //         },
+            //         {
+            //             "id": "idB",
+            //             "name": "LEADER <br> Iwan Sasmiko",
+            //             "options": {
+            //                 "nodeBGColor": '#84a59d',
+            //             },
+            //             "children": [
+            //                 {
+            //                     "id": "idC",
+            //                     "name": "Moh Sodik Fikri",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Fais Albaya",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Alfin Fatoni",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Pasya Ibrahim",
+            //                 },
+            //             ]
+            //         },
+            //         {
+            //             "id": "idB",
+            //             "name": "LEADER <br> Iwan Sasmiko",
+            //             "options": {
+            //                 "nodeBGColor": '#84a59d',
+            //             },
+            //             "children": [
+            //                 {
+            //                     "id": "idC",
+            //                     "name": "Moh Sodik Fikri",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Fais Albaya",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Alfin Fatoni",
+            //                 },
+            //                 {
+            //                     "id": "idD",
+            //                     "name": "Pasya Ibrahim",
+            //                 },
+            //             ]
+            //         },
+            //     ]
+            // };
 
             // const options = {
             //     width: 1100,
