@@ -96,7 +96,7 @@ class Welcome extends CI_Controller {
 	public function departements() {
 
 		$dept = $this->reportatt->get_departement();
-
+		// test push
 		$hierarchy = $this->buildHierarchy($dept);
 		$this->output
 			->set_content_type('application/json')
