@@ -73,7 +73,7 @@ class Welcome extends CI_Controller {
 	private function get_sub_child_dept($params) {
 		$dept = $this->reportatt->get_departement('child', $params);
 		return $dept;
-	}
+	}    
 
 	private function buildHierarchy($data, $parentId = '0') {
 		$result = [];
